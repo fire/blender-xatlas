@@ -219,6 +219,13 @@ class PG_SharedProperties (PropertyGroup):
                 ('COLLECTION', "Collection", ""),
                ]
         )
+    selectIndividual : EnumProperty(
+        name="",
+        description="Whether to unwrap Objects seperately",
+        items=[ ('COMBINED', "Combine", ""),
+                ('MESH', "Seperate Meshes", ""),
+               ]
+        )
 
     atlasLayout : EnumProperty(
         name="",
@@ -326,7 +333,16 @@ class Setup_Unwrap(bpy.types.Operator):
                             current_object.select_set(True)
             selected_objects = bpy.context.selected_objects
 
-        Unwrap_Lightmap_Group_Xatlas_2.execute(self, context)
+        # whether to unwrap objects into one or seperate
+        if sharedProperties.selectIndividual == 'MESH':
+            for select in selected_objects:
+                bpy.ops.object.select_all(action='DESELECT')
+                current_object = select
+                if current_object.type == 'MESH':
+                    current_object.select_set(True)
+                    Unwrap_Lightmap_Group_Xatlas_2.execute(self, context) 
+        elif sharedProperties.selectIndividual == 'COMBINED':
+            Unwrap_Lightmap_Group_Xatlas_2.execute(self, context)
 
         #reset everything--------------------------------------------
         bpy.ops.object.select_all(action='DESELECT')
@@ -785,6 +801,10 @@ class OBJECT_PT_run_panel (Panel):
         row.prop( scene.shared_properties, 'unwrapSelection')
         if scene.shared_properties.unwrapSelection == "COLLECTION":
             box.prop( scene.shared_properties, 'selectedCollection')
+
+        row = box.row()
+        row.label(text="Individuals")
+        row.prop ( scene.shared_properties, 'selectIndividual')
 
         box = layout.box()
         row = box.row()
