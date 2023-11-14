@@ -1,8 +1,5 @@
 # blender-xatlas
-
-I'm so sorry. This is not good. I have no idea what I'm doing.  
-
-This is a rough add-on for Blender allowing you to use Xatlas to unwrap and pack your uvs  
+This is a simple add-on for Blender allowing you to use Xatlas to unwrap and pack your uvs  
 It currently works on Windows/Linux (Tested on Windows 10, Windows 8, Ubuntu)  
 Code in /xatlas_src is modified from [xatlas](https://github.com/jpcy/xatlas/)  
 
