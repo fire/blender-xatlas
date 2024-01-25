@@ -8,7 +8,6 @@ Code in /xatlas_src is modified from [xatlas](https://github.com/jpcy/xatlas/)
 <img src="./readme_images/comparisons/sponza-xatlas-uv.png" alt="Tool Location" width="400" height="333">
 </p>
 
-
 ## Usage
 
 ### Install
@@ -17,16 +16,16 @@ Code in /xatlas_src is modified from [xatlas](https://github.com/jpcy/xatlas/)
 
 
 ### Use
-Warning! The tool will make a single user copy and triangulate your mesh (Unless using 'Pack Only')
+Warning! The tool will make a single user copy and triangulate your mesh! (Unless using 'Pack Only')
 <img src="./readme_images/tool-location.png" alt="Tool Location" width="569" height="408">
 1. Make sure your file is saved
 2. Change your settings under Xatlas Tools
 3. Select the objects you wish to unwrap and unpack
 4. Click ```Run Xatlas```
-5. Wait for an undetermined period
-6. Hopefully your unwrapped uvs should appear
+5. Wait for an undetermined period of time
+6. Your unwrapped UVs should pop out of the oven
 
-## Xatlas
+## Rebuilding Xatlas
 ### Build (Windows vs2017)
 1. Run ```./bin/premake.bat```
 2. Open ```./build/vs2017/xatlas.sln```
