@@ -11,8 +11,12 @@ Code in /xatlas_src is modified from [xatlas](https://github.com/jpcy/xatlas/)
 ## Usage
 
 ### Install
-1. Add ```./addons/blender-xatlas``` to you Blender addons folder, or download the .zip in releases and install in Blender [Preferences -> Add-ons -> Install... ]
-2. Once enabled it will appear under the Xatlas option in 3D View sidebar (Default open with 'n')
+Don't know what a GitHub is? Here's some simple instructions!
+1. [Download the repository.](https://codeload.github.com/s-ilent/blender-xatlas/zip/refs/heads/master)
+2. From the downloaded ZIP file, extract the contents of the `addons` folder into your Blender addons folder.
+   You should have a `blender-xatlas` folder in your Blender `addons` folder afterwards.
+3. Enable the addon from Blender Preferences
+4. You should see the Xatlas menu appear as an option in the 3D View sidebar (opened with 'n' by default)
 
 
 ### Use
@@ -26,6 +30,7 @@ Warning! The tool will make a single user copy and triangulate your mesh! (Unles
 6. Your unwrapped UVs should pop out of the oven
 
 ## Rebuilding Xatlas
+If you just want to install the addon, this section is not for you.
 ### Build (Windows vs2017)
 1. Run ```./bin/premake.bat```
 2. Open ```./build/vs2017/xatlas.sln```
